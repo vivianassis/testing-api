@@ -1,5 +1,6 @@
 package petstore.pet;
 
+
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -7,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.core.IsEqual.equalTo;
+
 
 
 public class AddPet extends BasePet {
@@ -15,6 +16,7 @@ public class AddPet extends BasePet {
 
     //addAnimal = [POST] Adicionar animal
     //Rest Assured seguindo o padrão Gherkin de escrita
+
     @Test
     public static void addPet() throws IOException {
 
@@ -32,10 +34,10 @@ public class AddPet extends BasePet {
 
 
     //addImagem = [POST] upload de foto do animal
-    @Test(dependsOnMethods = "addPet")
+    @Test
     public void uploadImageToPet() throws IOException {
-        String additionalMetadata = "";
-
+        addPet();
+        String additionalMetadata = "Dog";
         given()
                 .multiPart("petId", petId)
                 .multiPart("additionalMetadata", additionalMetadata)

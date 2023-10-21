@@ -1,8 +1,11 @@
 package petstore.pet;
 
+import petstore.BaseClass;
+
 import java.util.Random;
 
-public class BasePet {
+
+public class BasePet extends BaseClass {
     static String uri = "https://petstore.swagger.io/v2";
     static String token = "special_key";
     static int petId;
@@ -40,4 +43,6 @@ public class BasePet {
             "{\"id\": 0, \"name\": \"string\" } " +
             "], " +
             "  \"status\": \"sold\" }";
+
+
 }

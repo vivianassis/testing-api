@@ -1,8 +1,16 @@
 package petstore.user;
 
+import com.aventstack.extentreports.ExtentTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import petstore.BaseClass;
+import petstore.ExtentReportManager;
+
 import java.util.Random;
 
-public class BaseUser {
+public class BaseUser extends BaseClass {
         static String uri = "https://petstore.swagger.io/v2";
         static String token = "special_key";
         static String user = "vivianassis";
@@ -10,12 +18,15 @@ public class BaseUser {
         static int userId;
         static int userId2;
 
+
         static {
             // Gere o petId apenas uma vez durante a inicialização da classe
             Random random = new Random();
             userId = random.nextInt(10);
             userId2 = random.nextInt(10);
         }
+
+
     static String jsonBody =
             "{\n" +
             "  \"id\": " + userId + ",\n" +

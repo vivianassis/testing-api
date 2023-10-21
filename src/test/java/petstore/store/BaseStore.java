@@ -1,8 +1,11 @@
 package petstore.store;
 
+
+import petstore.BaseClass;
+
 import java.util.Random;
 
-public class BaseStore {
+public class BaseStore extends BaseClass {
     static String uri = "https://petstore.swagger.io/v2";
     static String token = "special_key";
 
@@ -18,6 +21,7 @@ public class BaseStore {
         orderId = random.nextInt(10);
     }
 
+//DATA----------------------------------------------------------------<<
      static String orderBody =
             "{\"id\": " + orderId + ", " +
             "\"petId\": " + petId + ", " +
